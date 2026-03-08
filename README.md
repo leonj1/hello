@@ -9,3 +9,4 @@ function greeting() {
   return "Hello from GPT-5.4!";
 }
 ```
+<!-- integration-test-marker -->
