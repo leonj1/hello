@@ -10,3 +10,4 @@ function greeting() {
 }
 ```
 <!-- integration-test-marker -->
+<!-- integration-test-marker -->
