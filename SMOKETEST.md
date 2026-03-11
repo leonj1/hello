@@ -2,15 +2,13 @@
 
 # Smoke Tests
 
-This document contains smoke tests for the static HTML project deployed on Railway.
+This document contains smoke tests for the static HTML project deployed via [my-deployer](https://github.com/leonj1/my-deployer) to AWS (S3 + CloudFront + Route53).
 
 ## Base URL
 
 ```
-BASE_URL=https://<your-railway-app>.up.railway.app
+BASE_URL=https://hello.joseserver.com
 ```
-
-> Replace `<your-railway-app>` with your actual Railway project subdomain before running tests.
 
 ---
 
@@ -66,7 +64,7 @@ curl -sI "$BASE_URL/index.html" | grep -i "content-type" | grep -q "text/html" &
 
 ```bash
 #!/bin/bash
-BASE_URL="https://<your-railway-app>.up.railway.app"
+BASE_URL="https://hello.joseserver.com"
 PASS=0
 FAIL=0
 
@@ -100,6 +98,6 @@ echo "Results: $PASS passed, $FAIL failed"
 
 ## Notes
 
-- Ensure the Railway deployment is fully live before running these tests.
+- Ensure the deployment is fully live before running these tests.
 - If `chat.html` does not exist in the project root, remove or update that test case accordingly.
 - The 404 test depends on the static file server being configured to return proper 404 responses; some static hosts return 200 with a custom error page — adjust the expected status code if needed.
